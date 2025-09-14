@@ -121,9 +121,7 @@ namespace Locate64.Engine.Search
 				{
 					if (isFile)
 					{
-						var ext = Path.GetExtension(entry.Name)
-							.TrimStart('.')
-							.ToLowerInvariant();
+						var ext = Path.GetExtension(entry.Name).TrimStart('.').ToLowerInvariant();
 
 						if (!_config.Extensions.Contains(ext))
 						{
