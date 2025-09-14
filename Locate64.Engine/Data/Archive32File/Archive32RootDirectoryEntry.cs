@@ -1,8 +1,7 @@
 ﻿using Locate64.Engine.Data;
-using Locate64.Engine.Data.Archive32File;
 using Locate64.Engine.IO;
 
-namespace Locate64.Core.Data.Archive32File
+namespace Locate64.Engine.Data.Archive32File
 {
 	public class Archive32RootDirectoryEntry : Archive32Entry
 	{

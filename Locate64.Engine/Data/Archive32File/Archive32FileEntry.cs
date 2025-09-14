@@ -1,9 +1,8 @@
-﻿using Locate64.Engine.Data.Archive32File;
-using Locate64.Engine.Exceptions;
+﻿using Locate64.Engine.Exceptions;
 using Locate64.Engine.IO;
 using Locate64.Engine.Utils;
 
-namespace Locate64.Core.Data.Archive32File
+namespace Locate64.Engine.Data.Archive32File
 {
 	public class Archive32FileEntry : Archive32Entry
 	{
@@ -100,15 +99,10 @@ namespace Locate64.Core.Data.Archive32File
 			entry.Name = reader.ReadNullTerminatedUtf16String(nameLength);
 			uint sizeLo = reader.ReadUInt32();
 			ushort sizeHi = reader.ReadUInt16();
-			entry.DataLength = ((long)sizeHi << 32) | sizeLo;
+			entry.DataLength = (long)sizeHi << 32 | sizeLo;
 			entry.ModifiedDosDateTime = reader.ReadUInt32();
 			entry.CreatedDosDateTime = reader.ReadUInt32();
 			entry.LastAccessedDosDateTime = reader.ReadUInt32();
-
-			if (entry.Name == "Unity.Services.Core.dll" || entry.Name == "hiberfil.sys")
-			{
-				Console.WriteLine(entry.ToString());
-			}
 
 			return entry;
 		}

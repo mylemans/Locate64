@@ -1,5 +1,4 @@
-﻿using Locate64.Core.Data.Archive32File;
-using System.Text;
+﻿using System.Text;
 
 namespace Locate64.Engine.Data.Archive32File;
 

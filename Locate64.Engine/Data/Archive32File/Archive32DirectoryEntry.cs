@@ -1,5 +1,4 @@
-﻿using Locate64.Core.Data.Archive32File;
-using Locate64.Engine.IO;
+﻿using Locate64.Engine.IO;
 
 namespace Locate64.Engine.Data.Archive32File
 {
