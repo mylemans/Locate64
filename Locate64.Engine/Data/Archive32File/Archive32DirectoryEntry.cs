@@ -8,9 +8,7 @@ namespace Locate64.Engine.Data.Archive32File
 
 		public byte Flags { get; internal set; }
 
-		public Archive32Entry? Parent { get; internal set; }
-
-		public string FullName
+		public override string FullName
 		{
 			get
 			{

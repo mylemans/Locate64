@@ -1,5 +1,4 @@
-﻿using Locate64.Engine.Data;
-using Locate64.Engine.IO;
+﻿using Locate64.Engine.IO;
 
 namespace Locate64.Engine.Data.Archive32File
 {
@@ -38,7 +37,8 @@ namespace Locate64.Engine.Data.Archive32File
 				VolumeSerial = reader.ReadUInt32(),
 				FileSystem = reader.ReadNullTerminatedUtf16String(),
 				NumberOfFiles = reader.ReadUInt32(),
-				NumberOfDirectories = reader.ReadUInt32()
+				NumberOfDirectories = reader.ReadUInt32(),
+				Parent = null
 			};
 
 			return entry;
