@@ -116,12 +116,23 @@ namespace Locate64.Engine.Search
 					name = entry.Name;
 				}
 
-				// Extension filter (files only)
-				if (_config.Extensions.Count > 0 && isFile)
+				// Extension filter
+				if (_config.Extensions.Count > 0)
 				{
-					var ext = Path.GetExtension(entry.Name).TrimStart('.').ToLowerInvariant();
-					if (!_config.Extensions.Contains(ext))
+					if (isFile)
 					{
+						var ext = Path.GetExtension(entry.Name)
+							.TrimStart('.')
+							.ToLowerInvariant();
+
+						if (!_config.Extensions.Contains(ext))
+						{
+							continue; // skip non-matching file extensions
+						}
+					}
+					else
+					{
+						// If it's not a file, and extensions are required → skip
 						continue;
 					}
 				}
