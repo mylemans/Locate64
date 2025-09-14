@@ -57,8 +57,8 @@ public class Archive32Reader : IDisposable
 	{
 		var header = Header;
 
-		// If there are no files just return 
-		if (header.NumberOfDirectories == 0 || header.NumberOfFiles == 0) {
+		// If there are no directories and no files just return 
+		if (header.NumberOfDirectories == 0 && header.NumberOfFiles == 0) {
 			yield break;
 		}
 
