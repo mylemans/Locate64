@@ -22,6 +22,8 @@ namespace Locate64.Engine.Data.Archive32File
 		{
 			get
 			{
+				if (Name == null || ExtensionIndex > Name.Length)
+					return string.Empty;
 				return Name.Substring(ExtensionIndex).TrimStart('.');
 			}
 		}
